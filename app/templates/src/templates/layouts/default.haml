@@ -1,0 +1,29 @@
+!!!5
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge"}
+    %meta{:viewport => "width=device-width; initial-scale=1"}
+
+    %title
+
+    / build:css stylesheets/site.css
+    %link{:rel => "stylesheet", :href => "stylesheets/site.css"}
+    / endbuild
+
+    / build:js javascripts/vendor/modernizr.js
+    %script{:src => "components/modernizr/modernizr.js"}
+    / endbuild
+
+  %body{:class => "{{ basename }}"}
+    %header
+
+    #content
+      {{> body }}
+
+    %footer
+
+
+  / build:js javascripts/site.js
+  %script{:src => "components/jquery/dist/jquery.js"}
+  / endbuild
